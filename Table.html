@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const table_m = () => {
+            for (let i = 1; i <= 10; i++) {
+                let number = document.getElementById("userVal").value;
+                let result = i * number;
+                document.getElementById("showing").innerHTML = `${i}`;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input id="userVal" type="text" />
+    <button onclick="table_m()">Save</button>
+    <div id="showing"></div>
+</body>
+
+</html>

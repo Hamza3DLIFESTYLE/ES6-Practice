@@ -24,11 +24,10 @@
 
 // Functions in ES5
 // var sub = (20 - 10);
-
-function sub(a, b) {
-    return a - b;
-}
-console.log(sub);
+// function sub(a, b) {
+//     return a - b;
+// }
+// console.log(sub);
 // Functions in ES5
 
 // Arrow Functions in ES6

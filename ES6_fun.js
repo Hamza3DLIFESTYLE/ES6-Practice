@@ -79,7 +79,7 @@
 
 // PROGRAM 5
 for (let i = 1; i <= 10; i++) {
-    let number = 10;
+    let number = 2;
     let rest = i * number;
     console.log(`${number} * ${i} = ${rest}`)
 

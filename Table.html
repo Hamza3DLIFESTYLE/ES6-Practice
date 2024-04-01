@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        const table_m = () => {
-            for (let i = 1; i <= 10; i++) {
-                let number = document.getElementById("userVal").value;
-                let result = i * number;
-                document.getElementById("showing").innerHTML = `${i}`;
-            }
-
+      const table_m = () => {
+        let table = "";
+        let number = document.getElementById("userVal").value;
+        for (let i = 1; i <= 10; i++) {
+          let result = i * number;
+          // 5 x 1 = 5 5 x 2 = 10
+          table = table + `\n ${number} x ${i} = ${result}`;
+          console.log("loop is at " + i);
+          console.log(table);
         }
+        //console.log(table);
+        document.getElementById("showing").innerHTML = `${table}`;
+        let x;
+        x = 5;
+        x = 6;
+        x = 7;
+        table = `\n 5 x 1 = 5`;
+        table = `\n 5 x 2 = 10`;
+        table = `\n 5 x 3 = 15`;
+        console.log(table);
+        // string concatination
+      };
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <input id="userVal" type="text" />
     <button onclick="table_m()">Save</button>
     <div id="showing"></div>
-</body>
-
+  </body>
 </html>

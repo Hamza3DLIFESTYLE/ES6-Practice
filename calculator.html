@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+</head>
+
+
+<body>
+    <h4>1st Number</h4>
+    <input type="text" id="num_1" />
+    <h4>2st Number</h4>
+    <input type="text" id="num_2" />
+    <br>
+    <br>
+    <button onclick="subtraction_num()">Addition</button>
+    <button onclick="subtraction_sub()">Subtration</button>
+    <button onclick="subtraction_div()">Division</button>
+    <button onclick="subtraction_mul()">Multiplication</button>
+    <br>
+    <br>
+    <p id="res"></p>
+</body>
+<script>
+    const subtraction_num = () => {
+        let a = parseInt(document.getElementById("num_1").value);
+        let b = parseInt(document.getElementById("num_2").value);
+        let result = a + b;
+        document.getElementById("res").innerHTML = `Calculated Result = ${result}`;
+    }
+
+    const subtraction_sub = () => {
+        let a = document.getElementById("num_1").value;
+        let b = document.getElementById("num_2").value;
+        let result = a - b;
+        document.getElementById("res").innerHTML = `Calculated Result = ${result}`;
+    }
+
+    const subtraction_div = () => {
+        let a = document.getElementById("num_1").value;
+        let b = document.getElementById("num_2").value;
+        let result = a / b;
+        document.getElementById("res").innerHTML = `Calculated Result = ${result}`;
+    }
+
+    const subtraction_mul = () => {
+        let a = document.getElementById("num_1").value;
+        let b = document.getElementById("num_2").value;
+        let result = a * b;
+        document.getElementById("res").innerHTML = `Calculated Result = ${result}`;
+    }
+</script>
+
+</html>

@@ -56,15 +56,42 @@
                 <button type="submit" class="btn btn-danger" onclick="close_form()">Cancel</button>
             </form>
         </div>
+        <!--  edit form -->
+        <div class="info_form" id="edit">
+            <form onsubmit="event.preventDefault()">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="edt_name" placeholder="Enter Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="edt_email" placeholder="Enter Your Email">
+                </div>
 
-        <table id="add_data">
-            <th>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Phone#</label>
+                    <input type="number" class="form-control" id="edt_phone" placeholder="Enter Your Phone#">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="edt_address" placeholder="Enter Your Address">
+                </div>
+                <button type="submit" class="btn btn-primary" id="edt_submit" onclick="update_val()">update</button>
+                <button type="submit" class="btn btn-danger" onclick="close_form()">Cancel</button>
+            </form>
+        </div>
+
+        <div class="table_w" id="add_data">
+            <table class="table" id="empRtable">
                 <tr>
-                    <th>Name </th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Department Name</th>
+                    <th scope="col">Date Of Joing</th>
+                    <th scope="col">Actions</th>
                 </tr>
+                <tbody id="table_b">
                 <tbody>
 
                 </tbody>
@@ -86,35 +113,80 @@
         x.style.display = "none";
     }
 
+let id = 1
     const get_val = () => {
         let Name = document.getElementById("name").value;
         let Email = document.getElementById("email").value;
         let Phone = document.getElementById("phone").value;
         let Address = document.getElementById("address").value;
         let address = {
+            id: id,
             name: Name,
             email: Email,
             phone: Phone,
             address: Address
         }
+        id++
         address_book.push(address);
         address = {};
         console.log(address_book);
         const table_body = document.querySelector("#add_data tbody");
         // table_body.innerHTML = "";
         const rows = document.createElement("tr");
+        rows.setAttribute("id", "row1");
+        rows.innerHTML = ""
         let row = "";
         address_book.forEach(address => {
 
-            row += `
+             rows.innerHTML= `
         <td>${address.name}</td>
         <td>${address.email}</td>
         <td>${address.phone}</td>
         <td>${address.address}</td>
+        <td><button class="btn btn-primary">edit</button>
+        <button class="btn btn-danger" onclick="deletez(${address.id})">
+            delete
+            </button></td>
         `
         });
-        rows.innerHTML = row
+        
+             
         table_body.appendChild(rows);
+    }
+
+
+    // delete function body
+
+    const deletez =(id)=>{
+
+        // console.log(address_book[id-1])
+        // remove element with id == parameter id
+      const   new_address_book = address_book.filter(address=>
+        address.id!== id   
+        );
+        console.log(new_address_book)
+
+        const table_body = document.querySelector("#add_data tbody");
+        // table_body.innerHTML = "";
+        const rows = document.getElementById("row1");
+       
+        rows.innerHTML = ""
+        new_address_book.forEach(address => {
+
+             rows.innerHTML= `
+        <td>${address.name}</td>
+        <td>${address.email}</td>
+        <td>${address.phone}</td>
+        <td>${address.address}</td>
+        <td><button class="btn btn-primary">edit</button>
+        <button class="btn btn-danger" onclick="deletez(${address.id})">
+            delete
+            </button></td>
+        `
+        });
+      
+        table_body.appendChild(rows);
+        address_book= new_address_book
     }
 </script>
 

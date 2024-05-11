@@ -92,11 +92,11 @@
                     <th scope="col">Actions</th>
                 </tr>
                 <tbody id="table_b">
-                <tbody>
+                    <tbody>
 
-                </tbody>
-            </th>
-        </table>
+                    </tbody>
+                    </th>
+            </table>
     </section>
 </body>
 <script>
@@ -113,7 +113,7 @@
         x.style.display = "none";
     }
 
-let id = 1
+    let id = 1
     const get_val = () => {
         let Name = document.getElementById("name").value;
         let Email = document.getElementById("email").value;
@@ -138,7 +138,7 @@ let id = 1
         let row = "";
         address_book.forEach(address => {
 
-             rows.innerHTML= `
+            rows.innerHTML = `
         <td>${address.name}</td>
         <td>${address.email}</td>
         <td>${address.phone}</td>
@@ -149,31 +149,31 @@ let id = 1
             </button></td>
         `
         });
-        
-             
+
+
         table_body.appendChild(rows);
     }
 
 
     // delete function body
 
-    const deletez =(id)=>{
+    const deletez = (id) => {
 
         // console.log(address_book[id-1])
         // remove element with id == parameter id
-      const   new_address_book = address_book.filter(address=>
-        address.id!== id   
+        const new_address_book = address_book.filter(address =>
+            address.id !== id
         );
         console.log(new_address_book)
 
         const table_body = document.querySelector("#add_data tbody");
         // table_body.innerHTML = "";
         const rows = document.getElementById("row1");
-       
+
         rows.innerHTML = ""
         new_address_book.forEach(address => {
 
-             rows.innerHTML= `
+            rows.innerHTML = `
         <td>${address.name}</td>
         <td>${address.email}</td>
         <td>${address.phone}</td>
@@ -184,9 +184,9 @@ let id = 1
             </button></td>
         `
         });
-      
+
         table_body.appendChild(rows);
-        address_book= new_address_book
+        address_book = new_address_book
     }
 </script>
 

@@ -30,5 +30,4 @@ const emp_s = () => {
         `
     });
     table_d.appendChild(empd_row);
-
 }

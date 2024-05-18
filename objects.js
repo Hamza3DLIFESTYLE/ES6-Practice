@@ -1,7 +1,7 @@
 const factory = (
-  namez,
-  body_type,
-  power,
+  namez, // 'A6 Avant (C8, facelift 2023)'
+  body_type, //  'Station wagon (estate)'
+  power, // '367 horsepower'
   oil_change_days,
   fuel,
   dimensions,
@@ -52,4 +52,11 @@ audi5.model = "2021";
 // audi.RPM();
 
 console.log(audi5);
-console.log(audi6);
+//console.log(audi6);
+
+const add = (a, b) => {
+  return a + b;
+};
+
+const sum = add(5, 10);
+console.log(sum);
